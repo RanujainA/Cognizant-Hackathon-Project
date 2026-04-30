@@ -26,12 +26,11 @@ public class TC_03 extends BaseTest {
         hp.endDate("30", "June", "2026");
         hp.enterNumberOfAdults(4);
         hp.search();
-        HotelSearchPage hotelSearchPage = new HotelSearchPage(driver);
-        hotelSearchPage.clickOnSortBy();
+
         PropertyDetailsPage prop = new PropertyDetailsPage(driver);
 
         BookingDetails resultsPage = new BookingDetails(driver);
-
+//        resultsPage.sort();
         List<String> properties = resultsPage.getTopFivePropertyDetails();
         List<String> links = resultsPage.getTopFivePropertyLinks();
 

@@ -2,22 +2,35 @@ package org.zigwheels.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BookingDetails {
 
     WebDriver driver;
     WebDriverWait wait;
 
+    @FindBy(xpath="//span[normalize-space()='Sort by:']")
+    WebElement sortButton;
 
+    @FindBy(xpath="//span[normalize-space()='Top Reviewed']")
+    WebElement topReview;
     public BookingDetails(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    public void sort() throws InterruptedException {
+        Thread.sleep(1000);
+        sortButton.click();
+        Thread.sleep(1000);
+        topReview.click();
     }
 
     public List<WebElement> getTopFiveCards() {
