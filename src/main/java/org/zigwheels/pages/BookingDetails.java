@@ -51,4 +51,22 @@ public class BookingDetails {
 
         return result;
     }
+
+    public List<String> getTopFivePropertyLinks() {
+
+        List<WebElement> cards = wait.until(
+                ExpectedConditions.presenceOfAllElementsLocatedBy(
+                        By.xpath("(//div[@data-testid='property-card'])[position()<=5]")
+                )
+        );
+
+        List<String> links = new ArrayList<>();
+
+        for (WebElement card : cards) {
+            WebElement link = card.findElement(By.xpath(".//a[@data-testid='title-link']"));
+            links.add(link.getAttribute("href"));
+        }
+
+        return links;
+    }
 }
