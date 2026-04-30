@@ -30,11 +30,11 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Long.parseLong(Utility.fetchPropertyValue("implicitWaitSeconds").toString())));
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
 
