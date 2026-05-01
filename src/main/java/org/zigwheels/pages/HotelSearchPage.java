@@ -104,4 +104,5 @@ public class HotelSearchPage {
             log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
         }
     }
+
 }

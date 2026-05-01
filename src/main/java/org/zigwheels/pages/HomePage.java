@@ -70,7 +70,8 @@ public class HomePage {
 
     public void searchCity(String enterCity){
         try{
-            WaitUtils.waitForElementToBeVisible(searchCity).sendKeys(enterCity);
+            WaitUtils.waitForElementToBeVisible(searchCity);
+            searchCity.sendKeys(enterCity);
             searchCity.sendKeys(Keys.TAB);
         }catch(Exception e){
             log.error("Failed to enter city: " + e.getMessage(), e);
@@ -90,9 +91,10 @@ public class HomePage {
             log.error("Failed to open date picker: " + e2.getMessage(), e2);
         }
         try{
-            String[] currentMonthYear = WaitUtils.waitForElementToBeVisible(currentMonthAndYear).getText().split(" ");
-            String currentMonth = "";
-            String currentYear = "";
+            WaitUtils.waitForElementToBeVisible(currentMonthAndYear);
+            String[] currentMonthYear = currentMonthAndYear.getText().split(" ");
+            String currentMonth;
+            String currentYear;
             try{
                 currentMonth = currentMonthYear[0];
                 currentYear = currentMonthYear[1];

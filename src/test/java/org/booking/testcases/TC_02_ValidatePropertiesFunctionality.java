@@ -5,12 +5,11 @@ import org.testng.annotations.Test;
 import basetest.BaseTest;
 import org.zigwheels.pages.HomePage;
 import org.zigwheels.pages.HotelSearchPage;
-import utilities.WaitUtils;
 
-public class TC_02 extends BaseTest {
+public class TC_02_ValidatePropertiesFunctionality extends BaseTest {
 
         @Test
-        public void verifySortByTopReview() throws InterruptedException {
+        public void run(){
             HomePage hp = new HomePage(driver);
             hp.closePop();
             hp.searchCity("Nairobi");
@@ -23,6 +22,5 @@ public class TC_02 extends BaseTest {
             hsp.clickHotelsOption();
             hsp.clickWonderfulOption();
             hsp.inputElevatorInSmartFilters();
-            Thread.sleep(5000);
         }
 }

@@ -4,7 +4,7 @@ import basetest.BaseTest;
 import org.testng.annotations.Test;
 import org.zigwheels.pages.HomePage;
 
-public class Tc_01 extends BaseTest {
+public class TC_01_ValidateSearchFunctionality extends BaseTest {
     @Test
     public void run(){
         HomePage hp = new HomePage(driver);
