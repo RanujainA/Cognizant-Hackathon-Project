@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 
-public class TC_04_validateEndDateAfterFiveDays extends BaseTest {
+public class TC_12_ValidateEndDateAfterFiveDays extends BaseTest {
 
     @Test
     public void validateEndDateGreaterThanFiveDays() {

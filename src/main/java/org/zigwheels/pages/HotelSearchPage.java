@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
 
+import java.util.List;
+
 public class HotelSearchPage {
 
     private static final Logger log =
@@ -43,6 +45,9 @@ public class HotelSearchPage {
 
     @FindBy(xpath = "//div[contains(text(),'Wonderful') and @data-testid='filters-group-label-content']")
     WebElement checkWonderfulOption;
+
+    @FindBy(xpath = "//div[@class='f63b14ab7a f546354b44 becbee2f63']")
+    List<WebElement> reviewLabels;
 
     public void clickVacationHomesOption() {
         js.executeScript("arguments[0].scrollIntoView();",checkVacationOption);
@@ -105,6 +110,9 @@ public class HotelSearchPage {
         }catch(Exception e2){
             log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
         }
+    }
+    public List<WebElement> getReviewLabels() {
+        return reviewLabels;
     }
 
     public boolean isVacationHomesFilterApplied() {
