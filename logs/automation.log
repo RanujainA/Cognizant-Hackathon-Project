@@ -1,0 +1,185 @@
+2026-05-03 10:51:03 INFO  TC_10_HotelOptionIsSelected:16 - ===== TEST STARTED: Verify Hotels Option Selection =====
+2026-05-03 10:51:03 INFO  TC_10_HotelOptionIsSelected:21 - Closing popup if present
+2026-05-03 10:51:07 INFO  TC_10_HotelOptionIsSelected:24 - Entering city: Nairobi
+2026-05-03 10:51:08 INFO  TC_10_HotelOptionIsSelected:27 - Selecting travel dates
+2026-05-03 10:51:09 INFO  TC_10_HotelOptionIsSelected:31 - Clicking Search button
+2026-05-03 10:51:14 INFO  TC_10_HotelOptionIsSelected:34 - Attempting to select 'Hotels' filter option
+2026-05-03 10:51:15 INFO  TC_10_HotelOptionIsSelected:38 -  Hotels option is enabled and successfully selected
+2026-05-03 10:51:15 INFO  TC_10_HotelOptionIsSelected:43 - ===== TEST COMPLETED: Verify Hotels Option Selection =====
+2026-05-03 10:52:49 INFO  TC_10_HotelOptionIsSelected:16 - ===== TEST STARTED: Verify Hotels Option Selection =====
+2026-05-03 10:52:49 INFO  TC_10_HotelOptionIsSelected:21 - Closing popup if present
+2026-05-03 10:52:59 INFO  TC_10_HotelOptionIsSelected:24 - Entering city: Nairobi
+2026-05-03 10:52:59 INFO  TC_10_HotelOptionIsSelected:27 - Selecting travel dates
+2026-05-03 10:53:00 INFO  TC_10_HotelOptionIsSelected:31 - Adults are selected
+2026-05-03 10:53:00 INFO  TC_10_HotelOptionIsSelected:34 - Clicking Search button
+2026-05-03 10:53:12 INFO  TC_10_HotelOptionIsSelected:37 - Attempting to select 'Hotels' filter option
+2026-05-03 10:53:12 INFO  TC_10_HotelOptionIsSelected:41 -  Hotels option is enabled and successfully selected
+2026-05-03 10:53:12 INFO  TC_10_HotelOptionIsSelected:46 - ===== TEST COMPLETED: Verify Hotels Option Selection =====
+2026-05-03 11:02:04 INFO  TC_10_HotelOptionIsSelected:32 - ===== TEST STARTED: Verify 'See Availability' opens new window =====
+2026-05-03 11:02:04 INFO  TC_10_HotelOptionIsSelected:38 - Captured parent window handle: F670BAC6154B6E8AF9F617F5A571E212
+2026-05-03 11:02:04 INFO  TC_10_HotelOptionIsSelected:41 - Number of windows before clicking See Availability: 1
+2026-05-03 11:02:05 INFO  TC_10_HotelOptionIsSelected:44 - Attempting to click 'See Availability' button
+2026-05-03 11:02:29 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:02:29 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:02:29 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:02:29 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:02:29 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:02:37 INFO  PropertyDetailsPage:80 - Holiday Home Title: Kwetu Nairobi, Curio Collection By Hilton
+2026-05-03 11:02:37 INFO  PropertyDetailsPage:84 - Holiday Home Location: Peponi Road , 00100 Nairobi, Kenya
+Excellent location – rated 9.2/10!
+2026-05-03 11:02:38 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 176,280
+2026-05-03 11:02:38 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:02:38 INFO  PropertyDetailsPage:110 - Per Night: ₹29380.0
+2026-05-03 11:02:43 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt House Nairobi Westlands
+2026-05-03 11:02:43 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Rd, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:02:43 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 260,064
+2026-05-03 11:02:43 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:02:43 INFO  PropertyDetailsPage:110 - Per Night: ₹43344.0
+2026-05-03 11:02:50 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt Place Nairobi Westlands
+2026-05-03 11:02:50 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Road, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:02:50 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 85,802
+2026-05-03 11:02:50 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:02:50 INFO  PropertyDetailsPage:110 - Per Night: ₹14300.333333333334
+2026-05-03 11:03:04 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:03:04 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:03:04 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:03:04 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:03:04 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:03:04 INFO  TC_10_HotelOptionIsSelected:46 - 'See Availability' button click action completed
+2026-05-03 11:03:04 INFO  TC_10_HotelOptionIsSelected:51 - Number of windows after clicking See Availability: 1
+2026-05-03 11:03:04 ERROR TC_10_HotelOptionIsSelected:57 -  No new browser window opened after clicking 'See Availability'
+2026-05-03 11:03:04 INFO  TC_10_HotelOptionIsSelected:62 - Switched back to parent window
+2026-05-03 11:03:04 INFO  TC_10_HotelOptionIsSelected:64 - ===== TEST COMPLETED: Verify 'See Availability' opens new window =====
+2026-05-03 11:08:42 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:30 - ===== TEST STARTED: Verify Holiday Home Title =====
+2026-05-03 11:08:42 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:34 - Navigating to property details page
+2026-05-03 11:09:01 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:09:01 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:09:01 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:09:01 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:09:01 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:09:10 INFO  PropertyDetailsPage:80 - Holiday Home Title: Kwetu Nairobi, Curio Collection By Hilton
+2026-05-03 11:09:10 INFO  PropertyDetailsPage:84 - Holiday Home Location: Peponi Road , 00100 Nairobi, Kenya
+Excellent location – rated 9.2/10!
+2026-05-03 11:09:10 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 176,280
+2026-05-03 11:09:10 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:09:10 INFO  PropertyDetailsPage:110 - Per Night: ₹29380.0
+2026-05-03 11:09:15 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt House Nairobi Westlands
+2026-05-03 11:09:15 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Rd, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:09:15 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 260,064
+2026-05-03 11:09:15 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:09:15 INFO  PropertyDetailsPage:110 - Per Night: ₹43344.0
+2026-05-03 11:09:21 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt Place Nairobi Westlands
+2026-05-03 11:09:21 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Road, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:09:21 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 85,802
+2026-05-03 11:09:21 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:09:21 INFO  PropertyDetailsPage:110 - Per Night: ₹14300.333333333334
+2026-05-03 11:09:34 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:09:34 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:09:35 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:09:35 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:09:35 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:09:35 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:37 - Checking visibility of Holiday Home title
+2026-05-03 11:12:28 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:30 - ===== TEST STARTED: Verify Holiday Home Title =====
+2026-05-03 11:12:28 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:34 - Navigating to property details page
+2026-05-03 11:12:48 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:12:48 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:12:48 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:12:48 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:12:48 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:12:57 INFO  PropertyDetailsPage:80 - Holiday Home Title: Kwetu Nairobi, Curio Collection By Hilton
+2026-05-03 11:12:57 INFO  PropertyDetailsPage:84 - Holiday Home Location: Peponi Road , 00100 Nairobi, Kenya
+Excellent location – rated 9.2/10!
+2026-05-03 11:12:57 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 176,280
+2026-05-03 11:12:57 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:12:57 INFO  PropertyDetailsPage:110 - Per Night: ₹29380.0
+2026-05-03 11:13:01 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt House Nairobi Westlands
+2026-05-03 11:13:01 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Rd, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:13:01 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 260,064
+2026-05-03 11:13:01 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:13:01 INFO  PropertyDetailsPage:110 - Per Night: ₹43344.0
+2026-05-03 11:13:07 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt Place Nairobi Westlands
+2026-05-03 11:13:07 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Road, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:13:07 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 85,802
+2026-05-03 11:13:07 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:13:07 INFO  PropertyDetailsPage:110 - Per Night: ₹14300.333333333334
+2026-05-03 11:13:13 INFO  PropertyDetailsPage:80 - Holiday Home Title: Nairobi Serena Hotel
+2026-05-03 11:13:13 INFO  PropertyDetailsPage:84 - Holiday Home Location: Kenyatta Avenue,, 00100 Nairobi, Kenya
+Excellent location – rated 9.2/10!
+2026-05-03 11:13:14 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 292,405
+2026-05-03 11:13:14 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:13:14 INFO  PropertyDetailsPage:110 - Per Night: ₹48734.166666666664
+2026-05-03 11:13:14 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:37 - Checking visibility of Holiday Home title
+2026-05-03 11:15:56 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:19 - ===== TEST STARTED: Verify Holiday Home Title Is Displayed =====
+2026-05-03 11:15:56 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:24 - Closing popup if present
+2026-05-03 11:15:59 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:27 - Entering city: Nairobi
+2026-05-03 11:15:59 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:30 - Selecting travel dates
+2026-05-03 11:16:01 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:34 - Selecting number of adults
+2026-05-03 11:16:01 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:37 - Clicking Search
+2026-05-03 11:16:06 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:40 - Applying filters: Hotels, Vacation Homes, Wonderful
+2026-05-03 11:16:08 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:45 - Entering Smart Filter: Elevator
+2026-05-03 11:16:08 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:51 - Navigating to property details and extracting titles
+2026-05-03 11:16:14 INFO  PropertyDetailsPage:80 - Holiday Home Title: Forget your worries in this serene 5 Bedroom Villa
+2026-05-03 11:16:14 INFO  PropertyDetailsPage:84 - Holiday Home Location: Oloolua Close, 00507 Nairobi, Kenya
+After booking, all of the property’s details, including telephone and address, are provided in your booking confirmation and your account.
+2026-05-03 11:16:15 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 54,670
+2026-05-03 11:16:15 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:16:15 INFO  PropertyDetailsPage:110 - Per Night: ₹9111.666666666666
+2026-05-03 11:16:25 INFO  PropertyDetailsPage:80 - Holiday Home Title: Kwetu Nairobi, Curio Collection By Hilton
+2026-05-03 11:16:25 INFO  PropertyDetailsPage:84 - Holiday Home Location: Peponi Road , 00100 Nairobi, Kenya
+Excellent location – rated 9.2/10!
+2026-05-03 11:16:25 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 176,280
+2026-05-03 11:16:25 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:16:25 INFO  PropertyDetailsPage:110 - Per Night: ₹29380.0
+2026-05-03 11:16:33 INFO  PropertyDetailsPage:80 - Holiday Home Title: Hyatt Place Nairobi Westlands
+2026-05-03 11:16:33 INFO  PropertyDetailsPage:84 - Holiday Home Location: 10 Lower Kabete Road, 100 Nairobi, Kenya
+Excellent location – rated 9.4/10!
+2026-05-03 11:16:33 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 85,802
+2026-05-03 11:16:33 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:16:33 INFO  PropertyDetailsPage:110 - Per Night: ₹14300.333333333334
+2026-05-03 11:16:47 INFO  PropertyDetailsPage:80 - Holiday Home Title: Fairmont The Norfolk
+2026-05-03 11:16:47 INFO  PropertyDetailsPage:84 - Holiday Home Location: Harry Thuku Road, Nairobi CBD, 00200 Nairobi, Kenya
+Excellent location – rated 9/10!
+2026-05-03 11:16:47 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 284,741
+2026-05-03 11:16:47 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:16:47 INFO  PropertyDetailsPage:110 - Per Night: ₹47456.833333333336
+2026-05-03 11:16:52 INFO  PropertyDetailsPage:80 - Holiday Home Title: Glee Nairobi, a Preferred LVX Hotel
+2026-05-03 11:16:52 INFO  PropertyDetailsPage:84 - Holiday Home Location: Glee Nairobi, 27384 Nairobi, Kenya
+After booking, all of the property’s details, including telephone and address, are provided in your booking confirmation and your account.
+2026-05-03 11:16:52 INFO  PropertyDetailsPage:92 - Holiday Home Total Price (All Nights Included): ₹ 231,075
+2026-05-03 11:16:52 INFO  PropertyDetailsPage:109 - Duration: 6 nights
+2026-05-03 11:16:52 INFO  PropertyDetailsPage:110 - Per Night: ₹38512.5
+2026-05-03 11:16:53 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:53 - ✅ Holiday Home titles were successfully displayed and logged
+2026-05-03 11:16:53 INFO  TC_12_VerifyHolidayHomesTitleIsDisplayed:58 - ===== TEST COMPLETED: Verify Holiday Home Title Is Displayed =====
+2026-05-03 11:24:11 INFO  TC_12_InvalidInputInSmartFilter:18 - ===== TEST STARTED: Verify Empty Smart Filter (Negative) =====
+2026-05-03 11:24:12 INFO  TC_12_InvalidInputInSmartFilter:22 - Closing popup if present
+2026-05-03 11:24:14 INFO  TC_12_InvalidInputInSmartFilter:25 - Entering city: Nairobi
+2026-05-03 11:24:14 INFO  TC_12_InvalidInputInSmartFilter:28 - Selecting travel dates
+2026-05-03 11:24:16 INFO  TC_12_InvalidInputInSmartFilter:32 - Selecting number of adults
+2026-05-03 11:24:16 INFO  TC_12_InvalidInputInSmartFilter:35 - Clicking Search
+2026-05-03 11:24:21 INFO  TC_12_InvalidInputInSmartFilter:38 - Applying filters: Hotels, Vacation Homes, Wonderful
+2026-05-03 11:24:23 INFO  TC_12_InvalidInputInSmartFilter:43 - Ensuring Smart Filter input is left EMPTY
+2026-05-03 11:24:23 INFO  TC_12_InvalidInputInSmartFilter:44 - Clicking 'Find Properties' button without entering text
+2026-05-03 11:24:26 INFO  TC_12_InvalidInputInSmartFilter:52 -  Error message displayed for empty Smart Filter input
+2026-05-03 11:24:26 INFO  TC_12_InvalidInputInSmartFilter:57 - ===== TEST COMPLETED: Verify Empty Smart Filter (Negative) =====
+2026-05-03 11:28:08 INFO  TC_12_InvalidInputInSmartFilter:18 - ===== TEST STARTED: Verify Empty Smart Filter (Negative) =====
+2026-05-03 11:28:08 INFO  TC_12_InvalidInputInSmartFilter:22 - Closing popup if present
+2026-05-03 11:28:11 INFO  TC_12_InvalidInputInSmartFilter:25 - Entering city: Nairobi
+2026-05-03 11:28:12 INFO  TC_12_InvalidInputInSmartFilter:28 - Selecting travel dates
+2026-05-03 11:28:13 INFO  TC_12_InvalidInputInSmartFilter:32 - Selecting number of adults
+2026-05-03 11:28:14 INFO  TC_12_InvalidInputInSmartFilter:35 - Clicking Search
+2026-05-03 11:28:20 INFO  TC_12_InvalidInputInSmartFilter:38 - Applying filters: Hotels, Vacation Homes, Wonderful
+2026-05-03 11:28:22 INFO  TC_12_InvalidInputInSmartFilter:43 - Ensuring Smart Filter input is left EMPTY
+2026-05-03 11:28:22 INFO  TC_12_InvalidInputInSmartFilter:44 - Clicking 'Find Properties' button without entering text
+2026-05-03 11:28:23 INFO  TC_12_InvalidInputInSmartFilter:52 -  Error message displayed for empty Smart Filter input
+2026-05-03 11:28:23 INFO  TC_12_InvalidInputInSmartFilter:57 - ===== TEST COMPLETED: Verify Empty Smart Filter (Negative) =====
