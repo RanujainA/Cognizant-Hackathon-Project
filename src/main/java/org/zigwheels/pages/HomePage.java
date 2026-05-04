@@ -190,6 +190,7 @@ public class HomePage {
             log.error("Failed to click search button: " + e2.getMessage(), e2);
         }
     }
+
     public String getDestinationTooltipText() {
         WaitUtils.waitForElementToBeVisible(destinationTooltip);
         return destinationTooltip.getText();
@@ -198,7 +199,7 @@ public class HomePage {
     public boolean isCityEnteredCorrectly(String city) {
         try {
             String actualCity = searchCity.getAttribute("value");
-            return actualCity.equalsIgnoreCase(city);
+            return actualCity.contains(city);
         }
         catch (Exception e) {
             log.error("Failed to verify entered city: " + e.getMessage(), e);

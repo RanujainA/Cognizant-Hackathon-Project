@@ -3,11 +3,8 @@ package org.zigwheels.pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import utilities.Log;
 import utilities.WaitUtils;
 
 public class HotelSearchPage {
@@ -121,9 +118,11 @@ public class HotelSearchPage {
         }
     }
 
-    public String getSmartFilterText(){
+    public String getSmartFilterText() {
         String value = smartFilterTextArea.getAttribute("value");
         return value;
+    }
+
     public boolean isWonderfulFilterApplied(){
         return checkboxForWonderfulFilter.isSelected();
     }

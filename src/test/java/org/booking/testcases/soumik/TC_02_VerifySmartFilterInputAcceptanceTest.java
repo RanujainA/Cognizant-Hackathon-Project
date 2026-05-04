@@ -18,7 +18,7 @@ public class TC_02_VerifySmartFilterInputAcceptanceTest extends BaseTest {
         hp.enterNumberOfAdults(4);
         hp.search();
         HotelSearchPage hsp = new HotelSearchPage(driver);
-        hsp.inputElevatorInSmartFilters();
+        hsp.enterSmartFilter("Elevator");
         String expectedFilter = "Elevator";
         String actualFilter = hsp.getSmartFilterText();
         Assert.assertEquals(actualFilter,expectedFilter,"Smart Filter text area did not accept the input");
