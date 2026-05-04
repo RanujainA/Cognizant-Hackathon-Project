@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -43,6 +44,9 @@ public class PropertyDetailsPage {
 
     @FindBy(xpath="(//div[@class='bui-price-display__label '])[1]")
     WebElement tripDurationAndMembers;
+
+    @FindBy(xpath = "//span[@data-testid='price-and-discounted-price']")
+    List<WebElement> totalPriceElements;
 
     public void extractHolidayHomeDetails(){
         try{
@@ -132,6 +136,23 @@ public class PropertyDetailsPage {
             }
         }
         return false;
+    }
+    public List<Double> getParsedTotalPrices() {
+        List<Double> parsedPrices = new ArrayList<>();
+
+        for (WebElement priceElement : totalPriceElements) {
+            String priceText = priceElement.getText();
+            log.info("Extracted price text: {}", priceText);
+
+            String cleanedPrice = priceText.replaceAll("[^0-9]", "");
+
+            try {
+                parsedPrices.add(Double.parseDouble(cleanedPrice));
+            } catch (NumberFormatException e) {
+                log.error("Price parsing failed for: " + priceText, e);
+            }
+        }
+        return parsedPrices;
     }
 
     public boolean verifyLocationDisplayedForFirstFiveHolidayHomes() {

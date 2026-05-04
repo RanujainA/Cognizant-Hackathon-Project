@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtils;
 
+import java.util.List;
+
 public class HotelSearchPage {
 
     private static final Logger log =
@@ -56,6 +58,12 @@ public class HotelSearchPage {
 
     @FindBy(xpath="//div[text()='We couldn’t find any matching filters']")
     WebElement noMatchingFilter;
+
+    @FindBy(xpath = "(//span[text()='Elevator'])[1]")
+    WebElement elevator;
+
+    @FindBy(xpath = "//div[@class='f63b14ab7a f546354b44 becbee2f63']")
+    List <WebElement> reviewLabels;
 
     public void clickVacationHomesOption() {
         js.executeScript("arguments[0].scrollIntoView();",checkVacationOption);
@@ -119,7 +127,10 @@ public class HotelSearchPage {
             log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
         }
     }
-
+    public WebElement getElevatorLabel()
+    {
+        return   elevator;
+    }
     public boolean isWonderfulFilterApplied(){
         return checkboxForWonderfulFilter.isSelected();
     }
@@ -144,4 +155,7 @@ public class HotelSearchPage {
         return driver.getCurrentUrl().contains("searchresults");
     }
 
+    public List <WebElement> getReviewLabels() {
+        return reviewLabels;
+    }
 }
