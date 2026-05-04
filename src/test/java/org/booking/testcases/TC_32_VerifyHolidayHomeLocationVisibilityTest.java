@@ -1,13 +1,13 @@
-package org.booking.testcases.soumik;
+package org.booking.testcases;
 
 import basetest.BaseTest;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import org.booking.pages.PropertyDetailsPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import utilities.Log;
 
-public class TC_03_VerifyHolidayHomeLocationVisibilityTest extends BaseTest {
+public class TC_32_VerifyHolidayHomeLocationVisibilityTest extends BaseTest {
 
     @Test
     public void verifyHolidayHomeLocationForFirstFiveHomes() {

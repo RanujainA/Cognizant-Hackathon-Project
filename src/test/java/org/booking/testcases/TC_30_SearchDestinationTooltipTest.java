@@ -1,13 +1,13 @@
-package org.booking.testcases.soumik;
+package org.booking.testcases;
 
 import basetest.BaseTest;
+import org.booking.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.booking.pages.HomePage;
 import utilities.Log;
 
 
-public class TC_01_SearchDestinationTooltipTest extends BaseTest {
+public class TC_30_SearchDestinationTooltipTest extends BaseTest {
     @Test
     public void run(){
 

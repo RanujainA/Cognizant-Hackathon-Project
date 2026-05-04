@@ -1,4 +1,4 @@
-package org.booking.testcases.soumik;
+package org.booking.testcases;
 
 import basetest.BaseTest;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,7 +10,7 @@ import utilities.Log;
 
 import java.time.Duration;
 
-public class TC_05_VerifyWebsiteOpensInEdge extends BaseTest {
+public class TC_34_VerifyWebsiteOpensInEdge extends BaseTest {
 
     @Override
     @BeforeClass
