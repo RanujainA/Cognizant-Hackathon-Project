@@ -155,4 +155,114 @@ public class PropertyDetailsPage {
         return parsedPrices;
     }
 
+    public boolean verifyLocationDisplayedForFirstFiveHolidayHomes() {
+
+        String mainWindow = driver.getWindowHandle();
+
+        By holidayHomesBy =
+                By.xpath("//div[@data-testid='property-card']");
+        By seeAvailabilityBy =
+                By.xpath("//a[@data-testid='availability-cta-btn']");
+        By holidayHomeLocationBy =
+                By.xpath("//div[@class='b99b6ef58f cb4b7a25d9 b06461926f']");
+
+        for (int index = 0; index < 5; index++) {
+
+            List<WebElement> homes = driver.findElements(holidayHomesBy);
+            List<WebElement> availabilityButtons = driver.findElements(seeAvailabilityBy);
+
+            WebElement holidayHome = homes.get(index);
+            WebElement seeAvailabilityBtn = availabilityButtons.get(index);
+
+            WaitUtils.waitForElementToBeVisible(holidayHome);
+            js.executeScript(
+                    "arguments[0].scrollIntoView({block:'center'});",
+                    holidayHome
+            );
+
+            WaitUtils.waitForElementToBeClickable(seeAvailabilityBtn);
+            seeAvailabilityBtn.click();
+
+
+            for (String handle : driver.getWindowHandles()) {
+                if (!handle.equals(mainWindow)) {
+                    driver.switchTo().window(handle);
+                    break;
+                }
+            }
+
+
+            WebElement locationElement =
+                    WaitUtils.waitForElementToBeVisible(holidayHomeLocationBy);
+
+            String locationText = locationElement.getText().split("\n")[0].trim();
+            log.info(
+                    "Holiday Home Location (index " + (index + 1) + "): " + locationText
+            );
+
+            if (locationText.isEmpty()) {
+                driver.close();
+                driver.switchTo().window(mainWindow);
+                return false;
+            }
+
+            driver.close();
+            driver.switchTo().window(mainWindow);
+        }
+
+        return true;
+    }
+    public boolean verifyPriceIsDisplayedForFirstFiveHomes() {
+
+        String mainWindow = driver.getWindowHandle();
+
+        By holidayHomesBy =
+                By.xpath("//div[@data-testid='property-card']");
+        By seeAvailabilityBy =
+                By.xpath("//a[@data-testid='availability-cta-btn']");
+        By totalPriceBy =
+                By.xpath("(//span[@class='prco-valign-middle-helper'])[1]");
+
+        for (int index = 0; index < 5; index++) {
+
+            // Re-locate elements to avoid stale issues
+            List<WebElement> homes = driver.findElements(holidayHomesBy);
+            List<WebElement> availabilityButtons = driver.findElements(seeAvailabilityBy);
+
+            WebElement holidayHome = homes.get(index);
+            WebElement seeAvailabilityBtn = availabilityButtons.get(index);
+
+            WaitUtils.waitForElementToBeVisible(holidayHome);
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", holidayHome);
+
+            WaitUtils.waitForElementToBeClickable(seeAvailabilityBtn);
+            seeAvailabilityBtn.click();
+
+            // Switch to property details tab
+            for (String handle : driver.getWindowHandles()) {
+                if (!handle.equals(mainWindow)) {
+                    driver.switchTo().window(handle);
+                    break;
+                }
+            }
+
+            WebElement priceElement =
+                    WaitUtils.waitForElementToBeVisible(totalPriceBy);
+
+            String priceText = priceElement.getText().trim();
+            log.info("Holiday Home Price (index " + (index + 1) + "): " + priceText);
+
+            if (priceText.isEmpty()) {
+                driver.close();
+                driver.switchTo().window(mainWindow);
+                return false;
+            }
+
+            driver.close();
+            driver.switchTo().window(mainWindow);
+        }
+
+        return true;
+    }
+
 }

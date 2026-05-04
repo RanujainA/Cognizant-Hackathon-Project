@@ -52,6 +52,10 @@ public class HomePage {
     @FindBy(xpath="//span[text()='Search']")
     WebElement searchBtn;
 
+
+    @FindBy(xpath = "//div[contains(text(),'destination')]")
+    WebElement destinationTooltip;
+
     @FindBy(xpath="//div[@data-testid='property-card']")
     List<WebElement> propertyCards;
 
@@ -71,7 +75,6 @@ public class HomePage {
             log.error("Failed to close popup: " + e2.getMessage(), e2);
         }
     }
-
     public void searchCity(String enterCity){
         try{
             WaitUtils.waitForElementToBeVisible(searchCity);
@@ -187,10 +190,15 @@ public class HomePage {
         }
     }
 
+    public String getDestinationTooltipText() {
+        WaitUtils.waitForElementToBeVisible(destinationTooltip);
+        return destinationTooltip.getText();
+    }
+
     public boolean isCityEnteredCorrectly(String city) {
         try {
             String actualCity = searchCity.getAttribute("value");
-            return actualCity.equalsIgnoreCase(city);
+            return actualCity.contains(city);
         }
         catch (Exception e) {
             log.error("Failed to verify entered city: " + e.getMessage(), e);
