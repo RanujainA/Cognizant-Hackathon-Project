@@ -6,12 +6,12 @@ import org.booking.pages.PropertyDetailsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_27_VerifyHolidayHomePriceVisibilityTest extends BaseTest {
 
     @Test
     public void run() {
-
         Log.info("TEST STARTED : Verify Holiday Home Price Visibility");
 
         // Initialize Home Page
@@ -52,8 +52,8 @@ public class TC_27_VerifyHolidayHomePriceVisibilityTest extends BaseTest {
                 isPriceDisplayed,
                 "Price is not displayed for one or more holiday homes"
         );
-
         Log.info("Price is displayed for all first five holiday homes");
         Log.info("TEST COMPLETED SUCCESSFULLY");
+        ScreenshotUtil.takeScreenshot(driver, "TC_27_VerifyHolidayHomePriceVisibilityTest");
     }
 }

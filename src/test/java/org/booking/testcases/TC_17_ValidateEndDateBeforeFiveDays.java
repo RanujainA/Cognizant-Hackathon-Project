@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -12,9 +13,7 @@ public class TC_17_ValidateEndDateBeforeFiveDays extends BaseTest {
 
     @Test
     public void validateEndDateGreaterThanFiveDays() {
-
         Log.info("Test started: Validate end date difference <= 5 days");
-
         HomePage hp = new HomePage(driver);
 
         Log.info("Closing popup");
@@ -44,8 +43,8 @@ public class TC_17_ValidateEndDateBeforeFiveDays extends BaseTest {
                 difference <= 5,
                 "End date should be invalid if more than 5 days from start date"
         );
-
         Log.info("Validation successful: Date difference is within 5 days");
         Log.info("Test completed successfully");
+        ScreenshotUtil.takeScreenshot(driver, "TC_17_ValidateEndDateBeforeFiveDays");
     }
 }

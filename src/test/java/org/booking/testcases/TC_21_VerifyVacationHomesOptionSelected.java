@@ -5,6 +5,7 @@ import org.testng.asserts.SoftAssert;
 import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_21_VerifyVacationHomesOptionSelected extends BaseTest {
 
@@ -12,7 +13,6 @@ public class TC_21_VerifyVacationHomesOptionSelected extends BaseTest {
     public void verifyVacationHomesFilter() {
         HomePage hp = new HomePage(driver);
         HotelSearchPage hsp = new HotelSearchPage(driver);
-
         Log.info("Starting test: Verify Vacation Homes option selected");
 
         hp.closePop();
@@ -38,7 +38,6 @@ public class TC_21_VerifyVacationHomesOptionSelected extends BaseTest {
 
         SoftAssert sa = new SoftAssert();
         boolean vacationHomesApplied = hsp.isVacationHomesFilterApplied();
-
         Log.info("Vacation Homes filter applied: " + vacationHomesApplied);
 
         sa.assertTrue(vacationHomesApplied, "Vacation Homes option is not selected");
@@ -46,5 +45,6 @@ public class TC_21_VerifyVacationHomesOptionSelected extends BaseTest {
 
         sa.assertAll();
         Log.info("Soft assertions executed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_21_VerifyVacationHomesOptionSelected");
     }
 }

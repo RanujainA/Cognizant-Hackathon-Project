@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_19_VerifySearchLocation extends BaseTest {
 
     @Test
     public void verifyValidSearchLocation(){
         HomePage hp = new HomePage(driver);
-
         Log.info("Starting test: Verify valid search location");
 
         hp.closePop();
@@ -29,5 +29,6 @@ public class TC_19_VerifySearchLocation extends BaseTest {
 
         sa.assertAll();
         Log.info("Soft assertions executed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_19_VerifySearchLocation");
     }
 }

@@ -6,16 +6,19 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
-public class TC_07_VerifyBookingComWithFirefox extends BaseTest {
+import java.util.List;
+
+public class TC_07_HotelsSortedByHighPrice extends BaseTest {
 
     @Test
-    public void verifyBookingComWithFirefox() {
+    public void verifyHotelSortedByHighPrice() throws InterruptedException {
         HomePage hp = new HomePage(driver);
         HotelSearchPage hsp = new HotelSearchPage(driver);
         PropertyDetailsPage pdp = new PropertyDetailsPage(driver);
 
-        Log.info("Starting test: Verify Booking.com search flow with Firefox driver");
+        Log.info("Starting test: Verify if Hotels option is selected");
 
         hp.closePop();
         Log.info("Closed popup successfully");
@@ -41,16 +44,19 @@ public class TC_07_VerifyBookingComWithFirefox extends BaseTest {
         hsp.clickHotelsOption();
         Log.info("Clicked Hotels filter");
 
-        hsp.clickWonderfulOption();
-        Log.info("Clicked Wonderful filter");
-
         hsp.enterSmartFilter("Elevator");
         Log.info("Entered Elevator in Smart Filters");
+        Thread.sleep(7000);
 
-        pdp.extractHolidayHomeDetails();
-        Log.info("Extracted holiday home details");
-
-        Assert.assertTrue(true, "Firefox navigation and search flow failed");
-        Log.info("Assertion completed: Booking.com search flow verified with Firefox");
+        List<Integer> rating = hsp.expensiveProperties();
+        int limit = Math.min(5, rating.size());
+        for (int i = 0; i < limit - 1; i++) {
+            Assert.assertTrue(
+                    rating.get(i) >= rating.get(i + 1),
+                    "Rating order incorrect in first five: " + rating.subList(0, limit)
+            );
+            Log.info("Assertion completed: Hotels are sorted according to property rating properly");
+        }
+        ScreenshotUtil.takeScreenshot(driver, "TC_07_HotelsSortedByHighPrice");
     }
 }

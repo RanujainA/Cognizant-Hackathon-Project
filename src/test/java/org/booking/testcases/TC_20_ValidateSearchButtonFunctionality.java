@@ -5,13 +5,13 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_20_ValidateSearchButtonFunctionality extends BaseTest {
 
     @Test
     public void validateSearchButton(){
         HomePage hp = new HomePage(driver);
-
         Log.info("Starting test: Validate Search Button Functionality");
 
         hp.closePop();
@@ -41,5 +41,6 @@ public class TC_20_ValidateSearchButtonFunctionality extends BaseTest {
 
         sa.assertAll();
         Log.info("Soft assertions executed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_20_ValidateSearchButtonFunctionality");
     }
 }

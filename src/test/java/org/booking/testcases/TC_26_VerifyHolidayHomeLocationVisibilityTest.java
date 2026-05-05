@@ -6,6 +6,7 @@ import org.booking.pages.PropertyDetailsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_26_VerifyHolidayHomeLocationVisibilityTest extends BaseTest {
 
@@ -54,8 +55,8 @@ public class TC_26_VerifyHolidayHomeLocationVisibilityTest extends BaseTest {
                 isLocationDisplayed,
                 "Location is not displayed for one or more of the first five holiday homes"
         );
-
         Log.info("Location displayed for all first five holiday homes");
         Log.info("TEST COMPLETED SUCCESSFULLY");
+        ScreenshotUtil.takeScreenshot(driver, "TC_26_VerifyHolidayHomeLocationVisibilityTest");
     }
 }

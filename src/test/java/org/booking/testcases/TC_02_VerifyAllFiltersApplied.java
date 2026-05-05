@@ -7,6 +7,7 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import utilities.ExcelUtils;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 import java.io.IOException;
 
@@ -57,6 +58,7 @@ public class TC_02_VerifyAllFiltersApplied extends BaseTest {
         sa.assertAll();
 
         Log.info("All filter assertions completed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_02_VerifyAllFiltersApplied");
     }
 }
 

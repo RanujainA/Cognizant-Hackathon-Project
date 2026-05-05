@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_03_InvalidInputInSmartFilters extends BaseTest {
     @Test
@@ -41,5 +42,6 @@ public class TC_03_InvalidInputInSmartFilters extends BaseTest {
 
         Assert.assertFalse(filterApplied, "Smart Filter should not be applied for invalid input");
         Log.info("Assertion completed: Invalid Smart Filter was not applied");
+        ScreenshotUtil.takeScreenshot(driver, "TC_03_InvalidInputInSmartFilters");
     }
 }

@@ -6,12 +6,12 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_13_VerifyHolidayHomesTitleIsDisplayed extends BaseTest {
 
     @Test
     public void verifyHolidayHomeTitleDisplayed() {
-
         Log.info("===== TEST STARTED: Verify Holiday Home Title Is Displayed =====");
 
         HomePage hp = new HomePage(driver);
@@ -43,7 +43,6 @@ public class TC_13_VerifyHolidayHomesTitleIsDisplayed extends BaseTest {
 
         Log.info("Entering Smart Filter: Elevator");
         hsp.enterSmartFilter("Elevator");
-
         try {
             Log.info("Navigating to property details and extracting titles");
             pdp.extractHolidayHomeDetails();
@@ -52,13 +51,12 @@ public class TC_13_VerifyHolidayHomesTitleIsDisplayed extends BaseTest {
             isTitleExtractionSuccessful = false;
             Log.error(" Failed while extracting Holiday Home titles", e);
         }
-
         //  Added assertion
         Assert.assertTrue(
                 isTitleExtractionSuccessful,
                 "Holiday Home titles were not displayed or extracted successfully"
         );
-
         Log.info("===== TEST COMPLETED: Verify Holiday Home Title Is Displayed =====");
+        ScreenshotUtil.takeScreenshot(driver, "TC_13_VerifyHolidayHomesTitleIsDisplayed");
     }
 }

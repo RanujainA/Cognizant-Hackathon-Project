@@ -70,6 +70,7 @@ public class HomePage {
             Log.error("Failed to close popup: " + e2.getMessage(), e2);
         }
     }
+
     public void searchCity(String enterCity){
         try{
             WaitUtils.waitForElementToBeVisible(searchCity);

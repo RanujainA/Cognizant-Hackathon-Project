@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_09_ValidAdultCount extends BaseTest {
 
@@ -37,5 +38,6 @@ public class TC_09_ValidAdultCount extends BaseTest {
 
         softAssert.assertAll();
         Log.info(" TC_09_ValidAdultCount completed successfully");
+        ScreenshotUtil.takeScreenshot(driver, "TC_09_ValidAdultCount");
     }
 }

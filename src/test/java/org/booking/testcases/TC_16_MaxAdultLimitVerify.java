@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_16_MaxAdultLimitVerify extends BaseTest {
 
@@ -13,7 +14,6 @@ public class TC_16_MaxAdultLimitVerify extends BaseTest {
     public void verifyMaxAdultLimit() {
 
         Log.info("Test started: Verify adult limit is not exceeded");
-
         HomePage hp = new HomePage(driver);
 
         Log.info("Closing popup");
@@ -30,15 +30,13 @@ public class TC_16_MaxAdultLimitVerify extends BaseTest {
 
         Log.info("Entering number of adults: 4");
         boolean isLimitNotReached = hp.enterNumberOfAdults(4);
-
         Log.info("Is adult limit NOT reached: "+ isLimitNotReached);
-
         Assert.assertTrue(
                 isLimitNotReached,
                 "FAIL: Adult limit was unexpectedly reached for valid input"
         );
-
         Log.info("Validation successful: Adult limit not reached for valid number");
         Log.info("Test completed successfully");
+        ScreenshotUtil.takeScreenshot(driver, "TC_16_MaxAdultLimitVerify");
     }
 }

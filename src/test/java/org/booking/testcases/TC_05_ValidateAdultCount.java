@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_05_ValidateAdultCount extends BaseTest {
 
@@ -30,5 +31,6 @@ public class TC_05_ValidateAdultCount extends BaseTest {
 
         Assert.assertFalse(adultCountValid, "Adult count should not be valid when set to 0");
         Log.info("Assertion completed: Adult count validation passed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_05_ValidateAdultCount");
     }
 }

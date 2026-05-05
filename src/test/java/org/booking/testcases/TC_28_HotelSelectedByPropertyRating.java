@@ -10,13 +10,14 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 import java.util.List;
 
 public class TC_28_HotelSelectedByPropertyRating extends BaseTest {
 
     @Test
-    public void verifyBookingComWithFirefox() throws InterruptedException {
+    public void verifyBookingByPropertyRating() throws InterruptedException {
         HomePage hp = new HomePage(driver);
         HotelSearchPage hsp = new HotelSearchPage(driver);
         PropertyDetailsPage pdp = new PropertyDetailsPage(driver);
@@ -55,15 +56,14 @@ public class TC_28_HotelSelectedByPropertyRating extends BaseTest {
         Thread.sleep(2000);
 
         List<Integer> rating = hsp.topReviewedProperties();
-
         int limit = Math.min(5, rating.size());
-
         for (int i = 0; i < limit - 1; i++) {
             Assert.assertTrue(
                     rating.get(i) >= rating.get(i + 1),
                     "Rating order incorrect in first five: " + rating.subList(0, limit)
             );
             Log.info("Assertion completed: Hotels are sorted according to property rating properly");
+            ScreenshotUtil.takeScreenshot(driver, "TC_28_HotelSelectedByPropertyRating");
         }
     }
 }

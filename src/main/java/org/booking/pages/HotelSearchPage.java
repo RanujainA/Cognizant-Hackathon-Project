@@ -82,6 +82,9 @@ public class HotelSearchPage {
     @FindBy(xpath = "//span[contains(text(),'properties found')]")
     WebElement propertiesFoundText;
 
+    @FindBy(xpath = "//span[normalize-space()='Price (highest first)']")
+    WebElement highestPrices;
+
     public void clickVacationHomesOption() {
         js.executeScript("arguments[0].scrollIntoView();",checkVacationOption);
         try{
@@ -144,6 +147,7 @@ public class HotelSearchPage {
             Log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
         }
     }
+
     public WebElement getElevatorLabel()
     {
         return elevator;
@@ -177,6 +181,7 @@ public class HotelSearchPage {
             return false;
         }
     }
+
     public boolean checkPropertiesPageUrl(){
         return driver.getCurrentUrl().contains("searchresults");
     }
@@ -194,7 +199,6 @@ public class HotelSearchPage {
         sortButton.click();
         topReviewedProperties.click();
         List<Integer> rating = new ArrayList<>();
-
         for (WebElement ratings : ratingElements) {
             rating.add(Integer.parseInt(ratings.getAttribute("aria-label").split(" ")[0]));
         }
@@ -220,5 +224,15 @@ public class HotelSearchPage {
         return getPropertiesFoundText()
                 .toLowerCase()
                 .contains("properties found");
+    }
+
+    public List<Integer> expensiveProperties(){
+        sortButton.click();
+        highestPrices.click();
+        List <Integer> price = new ArrayList<>();
+        for (WebElement p : prices) {
+            price.add(Integer.parseInt(p.getText().split(" ")[1].replace(",","")));
+        }
+        return price;
     }
 }

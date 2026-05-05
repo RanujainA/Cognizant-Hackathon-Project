@@ -7,6 +7,7 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_04_ValidateNavigation extends BaseTest {
     @Test
@@ -52,5 +53,6 @@ public class TC_04_ValidateNavigation extends BaseTest {
 
         Assert.assertTrue(hsp.checkPropertiesPageUrl(), "Invalid Navigation");
         Log.info("Assertion completed: Navigation to property details page verified");
+        ScreenshotUtil.takeScreenshot(driver, "TC_04_ValidateNavigation");
     }
 }

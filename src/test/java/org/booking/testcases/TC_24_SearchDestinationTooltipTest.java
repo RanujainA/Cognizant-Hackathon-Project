@@ -5,6 +5,7 @@ import org.booking.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 
 public class TC_24_SearchDestinationTooltipTest extends BaseTest {
@@ -23,10 +24,8 @@ public class TC_24_SearchDestinationTooltipTest extends BaseTest {
         Assert.assertTrue(
                 actualError.toLowerCase().contains("destination"),"Tooltip Validation not displayed"
         );
-
         Log.info("Destination tooltip validation verified");
         Log.info("TEST COMPLETED SUCCESSFULLY");
-
+        ScreenshotUtil.takeScreenshot(driver, "TC_24_SearchDestinationTooltipTest");
     }
-
 }

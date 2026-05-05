@@ -10,6 +10,7 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 import java.util.List;
 
@@ -17,11 +18,10 @@ public class TC_29_HotelsSortedByLowPrice extends BaseTest {
 
 
     @Test
-    public void verifyBookingComWithFirefox() throws InterruptedException {
+    public void verifyHotelSortByLowPrice() throws InterruptedException {
         HomePage hp = new HomePage(driver);
         HotelSearchPage hsp = new HotelSearchPage(driver);
         PropertyDetailsPage pdp = new PropertyDetailsPage(driver);
-
         Log.info("Starting test: Verify if Hotels option is selected");
 
         hp.closePop();
@@ -48,25 +48,19 @@ public class TC_29_HotelsSortedByLowPrice extends BaseTest {
         hsp.clickHotelsOption();
         Log.info("Clicked Hotels filter");
 
-
         hsp.enterSmartFilter("Elevator");
         Log.info("Entered Elevator in Smart Filters");
         Thread.sleep(7000);
 
-
         List<Integer> rating = hsp.cheapestProperties();
-
         int limit = Math.min(5, rating.size());
-
-
         for (int i = 0; i < limit - 1; i++) {
             Assert.assertTrue(
                     rating.get(i) <= rating.get(i + 1),
                     "Rating order incorrect in first five: " + rating.subList(0, limit)
             );
-
-
             Log.info("Assertion completed: Hotels are sorted according to property rating properly");
+            ScreenshotUtil.takeScreenshot(driver, "TC_29_HotelsSortedByLowPrice");
         }
     }
 }

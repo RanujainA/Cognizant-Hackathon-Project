@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import org.booking.pages.HomePage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 import java.util.List;
 
@@ -13,9 +14,7 @@ public class TC_18_TotalPriceValidationTest extends BaseTest {
 
     @Test
     public void verifyTotalPriceIsExtractedAndParsedCorrectly() {
-
         Log.info("Test started: Verify total price extraction and parsing");
-
         HomePage hp = new HomePage(driver);
 
         Log.info("Closing initial popup");
@@ -48,7 +47,6 @@ public class TC_18_TotalPriceValidationTest extends BaseTest {
                 prices.isEmpty(),
                 "FAIL: No total prices were extracted from the page"
         );
-
         for (Double price : prices) {
             Log.info("Validating parsed price value: "+ price);
             softAssert.assertTrue(
@@ -56,10 +54,9 @@ public class TC_18_TotalPriceValidationTest extends BaseTest {
                     "FAIL: Invalid parsed price found -> " + price
             );
         }
-
         softAssert.assertAll();
-
         Log.info("All price validations completed successfully");
         Log.info("Test completed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_18_TotalPriceValidationTest");
     }
 }

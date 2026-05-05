@@ -6,6 +6,7 @@ import org.booking.pages.HotelSearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_25_VerifySmartFilterInputAcceptanceTest extends BaseTest {
     @Test
@@ -40,5 +41,6 @@ public class TC_25_VerifySmartFilterInputAcceptanceTest extends BaseTest {
         Assert.assertEquals(actualFilter,expectedFilter,"Smart Filter text area did not accept the input");
         Log.info("Smart Filter text area accepted input correctly");
         Log.info("TEST COMPLETED SUCCESSFULLY");
+        ScreenshotUtil.takeScreenshot(driver, "TC_25_VerifySmartFilterInputAcceptanceTest");
     }
 }

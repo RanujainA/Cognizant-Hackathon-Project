@@ -6,6 +6,7 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_11_VerifyNewWindowOpens extends BaseTest {
 
@@ -20,7 +21,6 @@ public class TC_11_VerifyNewWindowOpens extends BaseTest {
         HomePage hp = new HomePage(driver);
         HotelSearchPage hsp = new HotelSearchPage(driver);
         PropertyDetailsPage pdp = new PropertyDetailsPage(driver);
-
         try {
             Log.info("Closing popup if present");
             hp.closePop();
@@ -54,19 +54,17 @@ public class TC_11_VerifyNewWindowOpens extends BaseTest {
             pdp.extractHolidayHomeDetails();
 
             Log.info(" See Availability click worked and property details were opened");
-
         } catch (Exception e) {
             isPropertyDetailsOpened = false;
             Log.error(" Failed while clicking See Availability or opening property details", e);
         }
-
         //  Soft assertion based on EXECUTION SUCCESS
         softAssert.assertTrue(
                 isPropertyDetailsOpened,
                 "See Availability click failed or property details did not open"
         );
-
         Log.info("===== TEST COMPLETED: Verify See Availability Opens Property Details =====");
         softAssert.assertAll();
+        ScreenshotUtil.takeScreenshot(driver, "TC_11_VerifyNewWindowOpens");
     }
 }

@@ -6,6 +6,7 @@ import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import org.booking.pages.PropertyDetailsPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_06_VerifyHolidayHomesResults extends BaseTest {
     @Test
@@ -50,5 +51,6 @@ public class TC_06_VerifyHolidayHomesResults extends BaseTest {
 
         sa.assertAll();
         Log.info("Soft assertions executed");
+        ScreenshotUtil.takeScreenshot(driver, "TC_06_VerifyHolidayHomesResults");
     }
 }

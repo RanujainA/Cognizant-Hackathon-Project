@@ -4,10 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_01_EmptySearchCityInput extends BaseTest {
-
-
     @Test
     public void searchCity(){
         HomePage hp = new HomePage(driver);
@@ -28,5 +27,7 @@ public class TC_01_EmptySearchCityInput extends BaseTest {
 
         Assert.assertTrue(validationMsgDisplayed, "City is entered");
         Log.info("Assertion completed: Validation message was shown for empty city input");
+
+        ScreenshotUtil.takeScreenshot(driver, "TC_01_EmptySearchCityInput");
     }
 }

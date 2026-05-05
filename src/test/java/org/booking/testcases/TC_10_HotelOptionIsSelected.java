@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import org.booking.pages.HomePage;
 import org.booking.pages.HotelSearchPage;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_10_HotelOptionIsSelected extends BaseTest {
 
@@ -40,8 +41,8 @@ public class TC_10_HotelOptionIsSelected extends BaseTest {
                 hsp.checkHotelsOption.isEnabled(),
                 " Hotels option is NOT enabled or could not be selected"
         );
-
         Log.info(" Hotels option is enabled and successfully selected");
         Log.info("===== TEST COMPLETED: Verify Hotels Option Selection =====");
+        ScreenshotUtil.takeScreenshot(driver, "TC_10_HotelOptionIsSelected");
     }
 }

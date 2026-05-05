@@ -6,12 +6,12 @@ import org.booking.pages.HotelSearchPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Log;
+import utilities.ScreenshotUtil;
 
 public class TC_30_VerifyPropertiesFoundTextIsDisplayed extends BaseTest {
 
     @Test
     public void run() {
-
         Log.info("TEST STARTED : Verify Properties Found Text Visibility");
 
         // Initialize Home Page
@@ -52,8 +52,8 @@ public class TC_30_VerifyPropertiesFoundTextIsDisplayed extends BaseTest {
                 hsp.isPropertiesFoundTextDisplayed(),
                 "Properties found text is not displayed"
         );
-
         Log.info("Properties found text is displayed correctly");
         Log.info("TEST COMPLETED SUCCESSFULLY");
+        ScreenshotUtil.takeScreenshot(driver, "TC_30_VerifyPropertiesFoundTextIsDisplayed");
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Log;
 import utilities.WaitUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
 public class PropertyDetailsPage {
     WebDriver driver;
     JavascriptExecutor js;
+
     public PropertyDetailsPage(WebDriver driver){
         this.driver = driver;
         this.js = (JavascriptExecutor) driver;
@@ -26,7 +28,7 @@ public class PropertyDetailsPage {
     @FindBy(xpath="//div[@data-capla-component-boundary='b-property-web-property-page/PropertyHeaderName']//h2")
     WebElement holidayHomeTitle;
 
-    @FindBy(xpath="(//div[@data-testid='PropertyHeaderAddressDesktop-wrapper']//div//button//div)[1]")
+    @FindBy(xpath="//div[@class='b99b6ef58f cb4b7a25d9 b06461926f']")
     WebElement holidayHomeLocation;
 
     @FindBy(xpath="(//span[@class='prco-valign-middle-helper'])[1]")
@@ -231,5 +233,4 @@ public class PropertyDetailsPage {
         }
         return true;
     }
-
 }

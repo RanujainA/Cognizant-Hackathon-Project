@@ -10,7 +10,7 @@
 <!--            <class name="org.booking.testcases.TC_04_ValidateNavigation"/>-->
 <!--            <class name="org.booking.testcases.TC_05_ValidateAdultCount"/>-->
 <!--            <class name="org.booking.testcases.TC_06_VerifyHolidayHomesResults"/>-->
-<!--            <class name="org.booking.testcases.TC_07_VerifyBookingComWithFirefox"/>-->
+<!--            <class name="org.booking.testcases.TC_07_HotelsSortedByHighPrice"/>-->
 <!--            <class name="org.booking.testcases.TC_08_InvalidDateTest"/>-->
 <!--            <class name="org.booking.testcases.TC_09_ValidAdultCount"/>-->
 <!--            <class name="org.booking.testcases.TC_10_HotelOptionIsSelected"/>-->
