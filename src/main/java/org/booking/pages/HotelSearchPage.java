@@ -1,22 +1,18 @@
 package org.booking.pages;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.Log;
 import utilities.WaitUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HotelSearchPage {
-
-    private static final Logger log =
-            LogManager.getLogger(HotelSearchPage.class);
-
     WebDriver driver;
     JavascriptExecutor js;
 
@@ -26,6 +22,11 @@ public class HotelSearchPage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//span[@data-testid='price-and-discounted-price']")
+    List <WebElement> prices;
+
+    @FindBy(xpath = "//div[@class='ebc566407a']")
+    List <WebElement> ratingElements;
     @FindBy(xpath="//div[contains(text(),'Vacation Homes') and @data-testid='filters-group-label-content']")
     WebElement checkVacationOption;
 
@@ -65,6 +66,18 @@ public class HotelSearchPage {
     @FindBy(xpath = "//div[@class='f63b14ab7a f546354b44 becbee2f63']")
     List <WebElement> reviewLabels;
 
+    @FindBy(xpath = "//div[@id=':r1l:-note']")
+    WebElement emptySmartFilter;
+
+    @FindBy(xpath = "//span[normalize-space()='Sort by:']")
+    WebElement sortButton;
+
+    @FindBy(xpath = "//span[normalize-space()='Property rating (high to low)']")
+    WebElement topReviewedProperties;
+
+    @FindBy(xpath = "//span[normalize-space()='Price (lowest first)']")
+    WebElement cheapestPrices;
+
     public void clickVacationHomesOption() {
         js.executeScript("arguments[0].scrollIntoView();",checkVacationOption);
         try{
@@ -74,10 +87,10 @@ public class HotelSearchPage {
                 checkVacationOption.click();
             }catch(ElementClickInterceptedException e1){
                 js.executeScript("arguments[0].click();", checkVacationOption);
-                log.warn("Click intercepted, used JavaScript click for checkVacationOption");
+                Log.warn("Click intercepted, used JavaScript click for checkVacationOption");
             }
         }catch(Exception e2){
-            log.error("Failed to click Vacation Homes option: " + e2.getMessage(), e2);
+            Log.error("Failed to click Vacation Homes option: " + e2.getMessage(), e2);
         }
     }
 
@@ -88,10 +101,10 @@ public class HotelSearchPage {
                 checkHotelsOption.click();
             }catch(ElementClickInterceptedException e1){
                 js.executeScript("arguments[0].click();", checkHotelsOption);
-                log.warn("Click intercepted, used JavaScript click for checkHotelsOption");
+                Log.warn("Click intercepted, used JavaScript click for checkHotelsOption");
             }
         }catch(Exception e2){
-            log.error("Failed to click Hotels option: " + e2.getMessage(), e2);
+            Log.error("Failed to click Hotels option: " + e2.getMessage(), e2);
         }
     }
 
@@ -104,10 +117,10 @@ public class HotelSearchPage {
                 checkWonderfulOption.click();
             }catch(ElementClickInterceptedException e1){
                 js.executeScript("arguments[0].click();", checkWonderfulOption);
-                log.warn("Click intercepted, used JavaScript click for checkWonderfulOption");
+                Log.warn("Click intercepted, used JavaScript click for checkWonderfulOption");
             }
         }catch(Exception e2){
-            log.error("Failed to click Wonderful option: " + e2.getMessage(), e2);
+            Log.error("Failed to click Wonderful option: " + e2.getMessage(), e2);
         }
     }
 
@@ -121,16 +134,17 @@ public class HotelSearchPage {
                 findPropertiesBtn.click();
             }catch(ElementClickInterceptedException e1){
                 js.executeScript("arguments[0].click();", findPropertiesBtn);
-                log.warn("Click intercepted, used JavaScript click for findPropertiesBtn");
+                Log.warn("Click intercepted, used JavaScript click for findPropertiesBtn");
             }
         }catch(Exception e2){
-            log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
+            Log.error("Failed to input Elevator in Smart Filters: " + e2.getMessage(), e2);
         }
     }
     public WebElement getElevatorLabel()
     {
         return   elevator;
     }
+
     public boolean isWonderfulFilterApplied(){
         return checkboxForWonderfulFilter.isSelected();
     }
@@ -151,6 +165,14 @@ public class HotelSearchPage {
         return !noMatchingFilter.isDisplayed();
     }
 
+    public boolean isNoMatchingFilterMessageDisplayed() {
+        try {
+            Log.info(emptySmartFilter.getText());
+            return emptySmartFilter.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
     public boolean checkPropertiesPageUrl(){
         return driver.getCurrentUrl().contains("searchresults");
     }
@@ -162,5 +184,24 @@ public class HotelSearchPage {
     public String getSmartFilterText(){
         String value = smartFilterTextArea.getAttribute("value");
         return value;
+    }
+    public List<Integer> topReviewedProperties(){
+        sortButton.click();
+        topReviewedProperties.click();
+        List<Integer> rating = new ArrayList<>();
+
+        for (WebElement ratings : ratingElements) {
+            rating.add(Integer.parseInt(ratings.getAttribute("aria-label").split(" ")[0]));
+        }
+        return rating;
+    }
+    public List<Integer> cheapestProperties(){
+        sortButton.click();
+        cheapestPrices.click();
+        List <Integer> price = new ArrayList<>();
+        for (WebElement p : prices) {
+            price.add(Integer.parseInt(p.getText().split(" ")[1].replace(",","")));
+        }
+        return price;
     }
 }
