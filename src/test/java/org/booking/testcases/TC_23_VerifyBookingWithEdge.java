@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import utilities.Log;
 import java.time.Duration;
+import utilities.ScreenshotUtil;
 
 public class TC_23_VerifyBookingWithEdge extends BaseTest {
 
@@ -39,6 +40,7 @@ public class TC_23_VerifyBookingWithEdge extends BaseTest {
                 currentUrl.contains("booking"),
                 "Website did not open correctly in Edge"
         );
+        ScreenshotUtil.takeScreenshot(driver, "TC_23_VerifyBookingWithEdge");
         Log.info("Website opened successfully in Edge browser");
         Log.info("TEST COMPLETED SUCCESSFULLY");
     }
