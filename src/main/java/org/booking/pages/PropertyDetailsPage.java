@@ -28,7 +28,7 @@ public class PropertyDetailsPage {
     @FindBy(xpath="//div[@data-capla-component-boundary='b-property-web-property-page/PropertyHeaderName']//h2")
     WebElement holidayHomeTitle;
 
-    @FindBy(xpath="//div[@class='b99b6ef58f cb4b7a25d9 b06461926f']")
+    @FindBy(xpath="(//div[@data-testid='PropertyHeaderAddressDesktop-wrapper']//following-sibling::div//child::div)[1]")
     WebElement holidayHomeLocation;
 
     @FindBy(xpath="(//span[@class='prco-valign-middle-helper'])[1]")
