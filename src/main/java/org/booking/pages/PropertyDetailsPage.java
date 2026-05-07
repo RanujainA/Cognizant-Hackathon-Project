@@ -2,6 +2,7 @@ package org.booking.pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
 import utilities.Log;
 import utilities.WaitUtils;
 
@@ -153,17 +154,13 @@ public class PropertyDetailsPage {
 
     public boolean verifyLocationDisplayedForFirstFiveHolidayHomes() {
         String mainWindow = driver.getWindowHandle();
-        By holidayHomesBy =
-                By.xpath("//div[@data-testid='property-card']");
-        By seeAvailabilityBy =
-                By.xpath("//a[@data-testid='availability-cta-btn']");
-        By holidayHomeLocationBy =
-                By.xpath("//div[@class='b99b6ef58f cb4b7a25d9 b06461926f']");
+
         for (int index = 0; index < 5; index++) {
-            List<WebElement> homes = driver.findElements(holidayHomesBy);
-            List<WebElement> availabilityButtons = driver.findElements(seeAvailabilityBy);
-            WebElement holidayHome = homes.get(index);
-            WebElement seeAvailabilityBtn = availabilityButtons.get(index);
+
+            WaitUtils.waitForElementToBePresent("//div[@data-testid='property-card']");
+            WebElement holidayHome = holidayHomes.get(index);
+
+            WebElement seeAvailabilityBtn = seeAvailability.get(index);
             WaitUtils.waitForElementToBeVisible(holidayHome);
             js.executeScript(
                     "arguments[0].scrollIntoView({block:'center'});",
@@ -177,9 +174,9 @@ public class PropertyDetailsPage {
                     break;
                 }
             }
-            WebElement locationElement =
-                    WaitUtils.waitForElementToBeVisible(holidayHomeLocationBy);
-            String locationText = locationElement.getText().split("\n")[0].trim();
+            WaitUtils.waitForElementToBePresent("(//div[@data-testid='PropertyHeaderAddressDesktop-wrapper']//following-sibling::div//child::div)[1]");
+            WaitUtils.waitForElementToBeVisible(holidayHomeLocation);
+            String locationText = holidayHomeLocation.getText().split("\n")[0].trim();
             Log.info(
                     "Holiday Home Location (index " + (index + 1) + "): " + locationText
             );
@@ -196,18 +193,13 @@ public class PropertyDetailsPage {
 
     public boolean verifyPriceIsDisplayedForFirstFiveHomes() {
         String mainWindow = driver.getWindowHandle();
-        By holidayHomesBy =
-                By.xpath("//div[@data-testid='property-card']");
-        By seeAvailabilityBy =
-                By.xpath("//a[@data-testid='availability-cta-btn']");
-        By totalPriceBy =
-                By.xpath("(//span[@class='prco-valign-middle-helper'])[1]");
+
         for (int index = 0; index < 5; index++) {
-            // Re-locate elements to avoid stale issues
-            List<WebElement> homes = driver.findElements(holidayHomesBy);
-            List<WebElement> availabilityButtons = driver.findElements(seeAvailabilityBy);
-            WebElement holidayHome = homes.get(index);
-            WebElement seeAvailabilityBtn = availabilityButtons.get(index);
+
+            WaitUtils.waitForElementToBePresent("//div[@data-testid='property-card']");
+
+            WebElement holidayHome = holidayHomes.get(index);
+            WebElement seeAvailabilityBtn = seeAvailability.get(index);
             WaitUtils.waitForElementToBeVisible(holidayHome);
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", holidayHome);
             WaitUtils.waitForElementToBeClickable(seeAvailabilityBtn);
@@ -219,9 +211,9 @@ public class PropertyDetailsPage {
                     break;
                 }
             }
-            WebElement priceElement =
-                    WaitUtils.waitForElementToBeVisible(totalPriceBy);
-            String priceText = priceElement.getText().trim();
+            WaitUtils.waitForElementToBePresent("(//span[@class='prco-valign-middle-helper'])[1]");
+            WaitUtils.waitForElementToBeVisible(holidayHomePrice);
+            String priceText = holidayHomePrice.getText().trim();
             Log.info("Holiday Home Price (index " + (index + 1) + "): " + priceText);
             if (priceText.isEmpty()) {
                 driver.close();
